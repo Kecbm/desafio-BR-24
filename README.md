@@ -8,7 +8,7 @@ Um **CRUD** utilizando `Bitrix24`, `PHP` e `React`.
 
 #### Documentação: 📌
 
-`[Notas sobre o desenvolvimento do aplicativo Bitrix24](https://training.bitrix24.com/rest_help/)`
+[Notas sobre o desenvolvimento do aplicativo Bitrix24](https://training.bitrix24.com/rest_help/)
 
 Para ter como base de desenvolvimento, tentei ter acesso ao exemplo disponibilizado no tópico **Aplicativos hospedados em servidores de terceiros**, porém o link não deu acesso ao arquivo, como podemos observar no GIF abaixo:
 

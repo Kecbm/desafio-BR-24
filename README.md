@@ -1,4 +1,4 @@
-# Boas vindas ao repositório do Desafio Técnico de Desenvolvedor PHP Full Stack da BR24 🚀
+# Boas vindas ao repositório do Desafio Técnico de Desenvolvedor PHP Full Stack da BR24 ⚡
 
 ## O que foi desenvolvido 👩‍💻
 

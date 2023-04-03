@@ -34,7 +34,7 @@ E rodamos o comando:
   php -S localhost:8000
 ```
 
-Após rodar o comando obtermos a resposta a seguir no terminal:
+Após rodar o comando obtemos a resposta a seguir no terminal:
 
 ```bash
   [Mon Apr  3 17:28:52 2023] PHP 7.4.33 Development Server (http://localhost:8000) started

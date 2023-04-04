@@ -13,7 +13,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 switch($method) {
     case "POST":
         $user = json_decode( file_get_contents('php://input') );
-        $sql = "INSERT INTO users(id, name, email, mobile, crated_at) VALUES (null, :name, :email, :mobile, :crated_at)";
+        $sql = "INSERT INTO users(id, name, email, mobile, created_at) VALUES (null, :name, :email, :mobile, :created_at)";
         $stmt = $conn->prepare($sql);
         $created_at = date('Y-m-d');
         $stmt->bindParam(':name', $user->name);

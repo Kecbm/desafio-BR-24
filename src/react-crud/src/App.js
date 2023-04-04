@@ -21,8 +21,8 @@ function App() {
         </nav>
         <Routes>
           <Route index element={<ListUser />} />
-          <Route patch="user/create" element={<CreateUser />} />
-          <Route patch="user/:id/edit" element={<EditUser />} />
+          <Route path="user/create" element={<CreateUser />} />
+          <Route path="user/:id/edit" element={<EditUser />} />
         </Routes>
     </div>
   );

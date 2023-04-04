@@ -1,36 +1,49 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ListUser() {
-    const [inputs, setInputs] = useState({});
+    const [users, setUsers] = useState([]);
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
+    useEffect(() => {
+        getUsers();
+    });
 
-        setInputs(values => ({...values, [name]: value}));
-    }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        console.log(inputs);
+    function getUsers() {
+        axios.get('http://localhost:8000/api/users').then(function(response) {
+        console.log(response.data);
+        setUsers(response.data);
+        });
     }
 
     return (
         <div>
             <h1>List Users</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Name: </label>
-                <input type="text" name="name" onChange={handleChange} />
-                <br />
-                <label>Email: </label>
-                <input type="text" name="email" onChange={handleChange} />
-                <br />
-                <label>Mobile: </label>
-                <input type="text" name="mobile" onChange={handleChange} />
-                <br />
-                <button>Save</button>
-            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {users.map((user, key) =>
+                        <tr key={key}>
+                            <td>{user.id}</td>
+                            <td>{user.name}</td>
+                            <td>{user.mobile}</td>
+                            <td>
+                                <Link to={`user/${user.id}/edit`}>Edit</Link>
+                                <button>Delete</button>
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
         </div>
     )
 }

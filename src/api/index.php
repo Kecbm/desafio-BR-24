@@ -56,14 +56,20 @@ switch($method) {
         break;
     
         case "PUT":
-            $user = json_decode( file_get_contents('php://input') );
-            $sql = "UPDATE company SET name =:name, email =:email, mobile =:mobile, updated_at =:updated_at WHERE id = :id";
+            $company = json_decode( file_get_contents('php://input') );
+            $sql = "UPDATE company SET name = :name, email =:email, CNPJ =:CNPJ, corporate_name =:corporate_name, annual_recipe =:annual_recipe, name_first_contact =:name_first_contact, last_name_first_contact =:last_name_first_contact, name_second_contact =:name_second_contact, last_name_second_contact =:last_name_second_contact, updated_at =:updated_at WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $updated_at = date('Y-m-d');
-            $stmt->bindParam(':id', $user->id);
-            $stmt->bindParam(':name', $user->name);
-            $stmt->bindParam(':email', $user->email);
-            $stmt->bindParam(':mobile', $user->mobile);
+            $stmt->bindParam(':id', $company->id);
+            $stmt->bindParam(':name', $company->name);
+            $stmt->bindParam(':email', $company->email);
+            $stmt->bindParam(':CNPJ', $company->CNPJ);
+            $stmt->bindParam(':corporate_name', $company->corporate_name);
+            $stmt->bindParam(':annual_recipe', $company->annual_recipe);
+            $stmt->bindParam(':name_first_contact', $company->name_first_contact);
+            $stmt->bindParam(':last_name_first_contact', $company->last_name_first_contact);
+            $stmt->bindParam(':name_second_contact', $company->name_second_contact);
+            $stmt->bindParam(':last_name_second_contact', $company->last_name_second_contact);
             $stmt->bindParam(':updated_at', $updated_at);
     
             if($stmt->execute()) {

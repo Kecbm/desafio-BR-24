@@ -2,30 +2,30 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function ListUser() {
-    const [users, setUsers] = useState([]);
+export default function ListCompany() {
+    const [company, setCompany] = useState([]);
 
     useEffect(() => {
-        getUsers();
+        getCompany();
     });
 
-    function getUsers() {
-        axios.get('http://localhost:8000/api/users').then(function(response) {
+    function getCompany() {
+        axios.get('http://localhost:8000/api/company').then(function(response) {
         //  console.log(response.data);
-        setUsers(response.data);
+        setCompany(response.data);
         });
     }
 
-    const deleteUser = (id) => {
-        axios.delete(`http://localhost:8000/api/user/${id}/delete`).then(function(response) {
+    const deleteCompany = (id) => {
+        axios.delete(`http://localhost:8000/api/company/${id}/delete`).then(function(response) {
             console.log(response.data);
-            getUsers();
+            getCompany();
         })
     }
 
     return (
         <div>
-            <h1>List Users</h1>
+            <h1>List Company</h1>
 
             <table>
                 <thead>
@@ -38,14 +38,14 @@ export default function ListUser() {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map((user, key) =>
+                    {company.map((company, key) =>
                         <tr key={key}>
-                            <td>{user.id}</td>
-                            <td>{user.name}</td>
-                            <td>{user.mobile}</td>
+                            <td>{company.id}</td>
+                            <td>{company.name}</td>
+                            <td>{company.mobile}</td>
                             <td>
-                                <Link to={`user/${user.id}/edit`}>Edit</Link>
-                                <button onClick={() => deleteUser(user.id)}>Delete</button>
+                                <Link to={`company/${company.id}/edit`}>Edit</Link>
+                                <button onClick={() => deleteCompany(company.id)}>Delete</button>
                             </td>
                         </tr>
                     )}

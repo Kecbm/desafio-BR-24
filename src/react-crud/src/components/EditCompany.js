@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function EditUser() {
+export default function EditCompany() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState([]);
     const {id} = useParams();
 
     useEffect(() => {
-        getUser();
+        getCompany();
     }, []);
 
-    function getUser() {
-        axios.get(`http://localhost:8000/api/user/${id}`).then(function(response) {
+    function getCompany() {
+        axios.get(`http://localhost:8000/api/company/${id}`).then(function(response) {
             console.log(response.data);
             setInputs(response.data);
         });
@@ -28,7 +28,7 @@ export default function EditUser() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.put(`http://localhost:8000/api/user/${id}/edit`, inputs).then(function(response){
+        axios.put(`http://localhost:8000/api/company/${id}/edit`, inputs).then(function(response){
             console.log(response.data);
             navigate('/');
         });
@@ -36,7 +36,7 @@ export default function EditUser() {
 
     return (
         <div>
-            <h1>Edit User</h1>
+            <h1>Edit Company</h1>
             <form onSubmit={handleSubmit}>
                 <label>Name: </label>
                 <input value={inputs.name} type="text" name="name" onChange={handleChange} />

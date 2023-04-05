@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function CreateUser() {
+export default function CreateCompany() {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({});
 
@@ -16,7 +16,7 @@ export default function CreateUser() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post('http://localhost:8000/api/user/save', inputs).then(function(response){
+        axios.post('http://localhost:8000/api/company/save', inputs).then(function(response){
             console.log(response.data);
             navigate('/');
         });
@@ -24,7 +24,7 @@ export default function CreateUser() {
 
     return (
         <div>
-            <h1>Create User</h1>
+            <h1>Create Company</h1>
             <form onSubmit={handleSubmit}>
                 <label>Name: </label>
                 <input type="text" name="name" onChange={handleChange} />

@@ -25,10 +25,9 @@
 
 .input {
     width: 100%;
-}
-
-.input:focus {
-    border: 2px solid #19affb;
+    font-family: Open Sans;
+    font-weight: 300;
+    font-size: 17px;
 }
 
 .button-form {

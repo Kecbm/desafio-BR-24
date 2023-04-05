@@ -4,6 +4,13 @@
     margin-top: 5%;
 }
 
+#list-title {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+}
+
 table, tr, td, th{
     border:#000 solid 1px;
     border-collapse:collapse;

@@ -22,6 +22,12 @@ function App() {
           <Route path="company/:id/edit" element={<EditCompany />} />
         </Routes>
       </section>
+      {/* 
+      IMPLEMENTAR UM EASTER EGG:
+      <button className="button first-button">Entre em contato</button> 
+      
+      AO CLICAR APARECER MINHAS REDES E A PÁGINA FICAR ANIMADA :D
+      */}
     </div>
   );
 }

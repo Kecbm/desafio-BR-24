@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@300&display=swap');
 
+#home-page {
+    padding: 2%;
+}
+
+#content-home {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 480px;
+    height: 150px;
+}
+
+#storage-company {
+    margin-top: -25%;
+    margin-left: 40%;
+}
+
 .title {
     font-family: Montserrat;
     font-weight: 700;
@@ -35,11 +51,11 @@
     border: solid transparent;
     border-radius: 5px;
     font-size: 17px;
+    margin-left: 100px;
 }
 
 .first-button {
     background-color:  #19affb;
-    color: #ffffff;
 }
 
 .first-button:hover {
@@ -48,6 +64,7 @@
 
 .link {
     text-decoration: none;
+    color: #ffffff;
 }
 
 .second-button {

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import './../css/ListCompany.css';
 
 export default function ListCompany() {
     const [company, setCompany] = useState([]);
@@ -24,8 +25,7 @@ export default function ListCompany() {
     }
 
     return (
-        <div>
-            <h1>Lista de Empresas</h1>
+        <div id="list-company">
             <table>
                 <thead>
                     <tr>
@@ -48,8 +48,8 @@ export default function ListCompany() {
                             <td>{company.annual_recipe}</td>
                             <td>{company.name_first_contact + ' '}{company.last_name_first_contact + ', '}{company.name_second_contact + ' '}{company.last_name_second_contact + ' '}</td>
                             <td>
-                                <Link to={`company/${company.id}/edit`}>Editar</Link>
-                                <button onClick={() => deleteCompany(company.id)}>Deletar</button>
+                                <button className="button-table"><Link to={`company/${company.id}/edit`} id="link-company">Editar</Link></button>
+                                <button className="button-table" onClick={() => deleteCompany(company.id)}>Deletar</button>
                             </td>
                         </tr>
                     )}

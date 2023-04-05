@@ -26,6 +26,7 @@ export default function ListCompany() {
 
     return (
         <div id="list-company">
+            <h1 id="list-title">Lista de Empresas</h1>
             <table>
                 <thead>
                     <tr>

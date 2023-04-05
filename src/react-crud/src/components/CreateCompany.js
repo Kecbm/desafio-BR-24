@@ -54,7 +54,7 @@ export default function CreateCompany() {
                 <label className="label">Sobrenome do contato 2: </label>
                 <input className="input" type="text" name="last_name_second_contact" onChange={handleChange} />
                 <br />
-                <button>Save</button>
+                <button className="button-form">Save</button>
             </form>
         </div>
     )

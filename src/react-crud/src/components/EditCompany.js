@@ -36,16 +36,34 @@ export default function EditCompany() {
 
     return (
         <div>
-            <h1>Edit Company</h1>
+            <h1>Editar Empresa</h1>
             <form onSubmit={handleSubmit}>
-                <label>Name: </label>
+                <label>Nome: </label>
                 <input value={inputs.name} type="text" name="name" onChange={handleChange} />
                 <br />
                 <label>Email: </label>
                 <input value={inputs.email} type="text" name="email" onChange={handleChange} />
                 <br />
-                <label>Mobile: </label>
-                <input value={inputs.mobile} type="text" name="mobile" onChange={handleChange} />
+                <label>CNPJ: </label>
+                <input value={inputs.CNPJ} type="text" name="CNPJ" onChange={handleChange} />
+                <br />
+                <label>Razão social: </label>
+                <input value={inputs.corporate_name} type="text" name="corporate_name" onChange={handleChange} />
+                <br />
+                <label>Receita anual: </label>
+                <input value={inputs.annual_recipe} type="text" name="annual_recipe" onChange={handleChange} />
+                <br />
+                <label>Nome do contato 1: </label>
+                <input value={inputs.name_first_contact} type="text" name="name_first_contact" onChange={handleChange} />
+                <br />
+                <label>Sobrenome do contato 1: </label>
+                <input value={inputs.last_name_first_contact} type="text" name="last_name_first_contact" onChange={handleChange} />
+                <br />
+                <label>Nome do contato 2: </label>
+                <input value={inputs.name_second_contact} type="text" name="name_second_contact" onChange={handleChange} />
+                <br />
+                <label>Sobrenome do contato 2: </label>
+                <input value={inputs.last_name_second_contact} type="text" name="last_name_second_contact" onChange={handleChange} />
                 <br />
                 <button>Save</button>
             </form>

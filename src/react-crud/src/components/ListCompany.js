@@ -25,27 +25,31 @@ export default function ListCompany() {
 
     return (
         <div>
-            <h1>List Company</h1>
-
+            <h1>Lista de Empresas</h1>
             <table>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Name</th>
+                        <th>Nome</th>
                         <th>Email</th>
-                        <th>Mobile</th>
-                        <th>Actions</th>
+                        <th>CNPJ</th>
+                        <th>Razão Social</th>
+                        <th>Receita Anual</th>
+                        <th>Contato</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     {company.map((company, key) =>
                         <tr key={key}>
-                            <td>{company.id}</td>
                             <td>{company.name}</td>
-                            <td>{company.mobile}</td>
+                            <td>{company.email}</td>
+                            <td>{company.CNPJ}</td>
+                            <td>{company.corporate_name}</td>
+                            <td>{company.annual_recipe}</td>
+                            <td>{company.name_first_contact + ' '}{company.last_name_first_contact + ', '}{company.name_second_contact + ' '}{company.last_name_second_contact + ' '}</td>
                             <td>
-                                <Link to={`company/${company.id}/edit`}>Edit</Link>
-                                <button onClick={() => deleteCompany(company.id)}>Delete</button>
+                                <Link to={`company/${company.id}/edit`}>Editar</Link>
+                                <button onClick={() => deleteCompany(company.id)}>Deletar</button>
                             </td>
                         </tr>
                     )}

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@300&display=swap');
+
+.title {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.title-blue {
+    color: #19affb;
+}
+
+.title-black {
+    color: #000000;
+}
+
+.sub-title {
+    color: #19affb;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.text {
+    font-family: Open Sans;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+.button {
+    text-align: center;
+    width: 300px;
+    height: 60px;
+    border: solid transparent;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.first-button {
+    background-color:  #19affb;
+    color: #ffffff;
+}
+
+.first-button:hover {
+    background-color: #000000;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.second-button {
+    background-color:  #19affb;
+    color: #ffffff;
+    border: #ffffff;
+}
+
+.second-button:hover {
+    background-color: #ffffff;
+    color: #19affb;
+}

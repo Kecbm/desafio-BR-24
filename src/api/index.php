@@ -68,45 +68,45 @@ switch($method) {
         echo json_encode($response);
         break;
     
-        case "PUT":
-            $company = json_decode( file_get_contents('php://input') );
-            $sql = "UPDATE company SET name = :name, email =:email, CNPJ =:CNPJ, corporate_name =:corporate_name, annual_recipe =:annual_recipe, name_first_contact =:name_first_contact, last_name_first_contact =:last_name_first_contact, name_second_contact =:name_second_contact, last_name_second_contact =:last_name_second_contact, updated_at =:updated_at WHERE id = :id";
-            $stmt = $conn->prepare($sql);
-            $updated_at = date('Y-m-d');
-            $stmt->bindParam(':id', $company->id);
-            $stmt->bindParam(':name', $company->name);
-            $stmt->bindParam(':email', $company->email);
-            $stmt->bindParam(':CNPJ', $company->CNPJ);
-            $stmt->bindParam(':corporate_name', $company->corporate_name);
-            $stmt->bindParam(':annual_recipe', $company->annual_recipe);
-            $stmt->bindParam(':name_first_contact', $company->name_first_contact);
-            $stmt->bindParam(':last_name_first_contact', $company->last_name_first_contact);
-            $stmt->bindParam(':name_second_contact', $company->name_second_contact);
-            $stmt->bindParam(':last_name_second_contact', $company->last_name_second_contact);
-            $stmt->bindParam(':updated_at', $updated_at);
+    case "PUT":
+        $company = json_decode( file_get_contents('php://input') );
+        $sql = "UPDATE company SET name = :name, email =:email, CNPJ =:CNPJ, corporate_name =:corporate_name, annual_recipe =:annual_recipe, name_first_contact =:name_first_contact, last_name_first_contact =:last_name_first_contact, name_second_contact =:name_second_contact, last_name_second_contact =:last_name_second_contact, updated_at =:updated_at WHERE id = :id";
+        $stmt = $conn->prepare($sql);
+        $updated_at = date('Y-m-d');
+        $stmt->bindParam(':id', $company->id);
+        $stmt->bindParam(':name', $company->name);
+        $stmt->bindParam(':email', $company->email);
+        $stmt->bindParam(':CNPJ', $company->CNPJ);
+        $stmt->bindParam(':corporate_name', $company->corporate_name);
+        $stmt->bindParam(':annual_recipe', $company->annual_recipe);
+        $stmt->bindParam(':name_first_contact', $company->name_first_contact);
+        $stmt->bindParam(':last_name_first_contact', $company->last_name_first_contact);
+        $stmt->bindParam(':name_second_contact', $company->name_second_contact);
+        $stmt->bindParam(':last_name_second_contact', $company->last_name_second_contact);
+        $stmt->bindParam(':updated_at', $updated_at);
+
+        if($stmt->execute()) {
+            $response = ['status' => 1, 'message' => 'Record updated sucessfully.'];
+        } else {
+            $response = ['status' => 0, 'message' => 'Failed to updated record.'];
+        }
+
+        echo json_encode($response);
+        break;
     
-            if($stmt->execute()) {
-                $response = ['status' => 1, 'message' => 'Record updated sucessfully.'];
-            } else {
-                $response = ['status' => 0, 'message' => 'Failed to updated record.'];
-            }
+    case "DELETE":
+        $sql = "DELETE FROM company WHERE id = :id";
+        $path = explode('/', $_SERVER['REQUEST_URI']);
 
-            echo json_encode($response);
-            break;
-        
-        case "DELETE":
-            $sql = "DELETE FROM company WHERE id = :id";
-            $path = explode('/', $_SERVER['REQUEST_URI']);
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id', $path[3]);
 
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':id', $path[3]);
+        if($stmt->execute()) {
+            $response = ['status' => 1, 'message' => 'Record deleted sucessfully.'];
+        } else {
+            $response = ['status' => 0, 'message' => 'Failed to delete record.'];
+        }
 
-            if($stmt->execute()) {
-                $response = ['status' => 1, 'message' => 'Record deleted sucessfully.'];
-            } else {
-                $response = ['status' => 0, 'message' => 'Failed to delete record.'];
-            }
-
-            echo json_encode($response);
-            break;
+        echo json_encode($response);
+        break;
 }        

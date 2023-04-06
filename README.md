@@ -61,6 +61,10 @@ Significa que o **servidor PHP** está funcionando corretamente. Assim, podemos 
 
 ### Integração da aplicação Full Stack com o Bitrix24 📲
 
-A integração foi a etapa mais desafiadora do projeto, pois a plataforma Bitrix24 e o PHP são ferramentas novas para mim. Pesquisei arduamente e encontrei a biblioteca [bitrix24-api-module](https://packagist.org/packages/oihso/php-bitrix24-api-module) porém não consegui instalar ela no projeto. Obtive o erro a seguir e não encontrei solução:
+A integração foi a etapa mais desafiadora do projeto, pois a plataforma Bitrix24 e o PHP são ferramentas novas para mim. Pesquisei arduamente e encontrei a biblioteca [bitrix24-api-module](https://packagist.org/packages/oihso/php-bitrix24-api-module) porém não consegui instalar ela no projeto. Obtive o erro a seguir, limpei o cache do Composer com o comando a seguir porém não solucionou o erro:
+
+```bash
+  composer clear-cache
+```
 
 ![Erro na instalação da biblioteca](././src/docs/02.%20Biblioteca%20bitrix24-api-module.png)

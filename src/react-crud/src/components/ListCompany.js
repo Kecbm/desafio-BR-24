@@ -11,17 +11,56 @@ export default function ListCompany() {
     });
 
     function getCompany() {
-        axios.get('http://localhost:8000/api/company').then(function(response) {
-        //  console.log(response.data);
-        setCompany(response.data);
+        const apiUrl = 'https://b24-56y3mh.bitrix24.com/rest/crm.company.list.json';
+
+        const params = {
+          filter: {},
+          auth: 'l9gr6K6xPyoOxHvz7eJsoYWu45Oy4q8aum1ty2HcMsP9F92jc1',
+        };
+      
+        axios.get(apiUrl, { params })
+        .then((response) => {
+            console.log('Empresas recuperadas com sucesso:', response.data.result);
+            setCompany(response.data.result);
+            return response.data.result;
+        })
+        .catch((error) => {
+            console.error('Erro ao recuperar empresas:', error);
+            throw error;
         });
+
+        /*   
+        //  Ler todas as Company do BD - CRUD React e PHP
+        axios.get('http://localhost:8000/api/company').then(function(response) {
+            //  console.log(response.data);
+            setCompany(response.data);
+        }); */
     }
 
     const deleteCompany = (id) => {
+        const apiUrl = `https://b24-56y3mh.bitrix24.com/rest/crm.company.delete.json`;
+
+        const requestBody = {
+            id: id,
+            auth: 'l9gr6K6xPyoOxHvz7eJsoYWu45Oy4q8aum1ty2HcMsP9F92jc1',
+        };
+
+        axios.delete(apiUrl, { data: requestBody })
+        .then((response) => {
+            console.log('Empresa deletada com sucesso:', response.data.result);
+            return response.data.result;
+        })
+        .catch((error) => {
+            console.error('Erro ao deletar empresa:', error);
+            throw error;
+        });
+
+        /* 
+        //  Deletar uma Company no BD - CRUD React e PHP
         axios.delete(`http://localhost:8000/api/company/${id}/delete`).then(function(response) {
             console.log(response.data);
             getCompany();
-        })
+        }); */
     }
 
     return (

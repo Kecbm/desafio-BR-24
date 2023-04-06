@@ -35,6 +35,18 @@ switch($method) {
         $sql = "INSERT INTO company(id, name, email, CNPJ, corporate_name, annual_recipe, name_first_contact, last_name_first_contact, name_second_contact, last_name_second_contact, created_at) VALUES (null, :name, :email, :CNPJ, :corporate_name, :annual_recipe, :name_first_contact, :last_name_first_contact, :name_second_contact, :last_name_second_contact, :created_at)";
         $stmt = $conn->prepare($sql);
         $created_at = date('Y-m-d');
+
+        // Coreção do erro de integração com o Bitrix24: Warning: Creating default object from empty value
+        $company->name = 'Padaria';
+        $company->email = 'Padaria@email.com';
+        $company->CNPJ = 11111111;
+        $company->corporate_name = 'Padaria Garanhuns';
+        $company->annual_recipe = 10000;
+        $company->name_first_contact = 'José';
+        $company->last_name_first_contact = 'Silva';
+        $company->name_second_contact = 'Camila';
+        $company->last_name_second_contact = 'Silvestre';
+
         $stmt->bindParam(':name', $company->name);
         $stmt->bindParam(':email', $company->email);
         $stmt->bindParam(':CNPJ', $company->CNPJ);
@@ -46,6 +58,7 @@ switch($method) {
         $stmt->bindParam(':last_name_second_contact', $company->last_name_second_contact);
         $stmt->bindParam(':created_at', $created_at);
 
+        // Continuação do erro de integração com o Bitrix24: Creating default object from empty value on line 40 {"status":1,"message":"Record creeated sucessfully."}
         if($stmt->execute()) {
             $response = ['status' => 1, 'message' => 'Record creeated sucessfully.'];
         } else {

@@ -1,4 +1,13 @@
 <?php
+// require_once (__DIR__.'/crest.php');
+
+// $result = CRest::call('profile');
+
+// echo '<pre>';
+// 	print_r($result);
+// echo '</pre>';
+
+echo 'Hello, World in Bitrix24';
 
 /* 
 OBS.: Comentando o código do CRUD em PHP para desenvolver a integração com o Bitrix24

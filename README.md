@@ -33,7 +33,7 @@ Para ter como base de desenvolvimento, tentei ter acesso ao exemplo disponibiliz
 
 Assim, priorizando o desenvolvimento guiado pelo **MVP** (Produto Minimamente Viável), decidi desenvolver primeiro um **CRUD** utilizando `React`, `PHP` e `MySQL`. Como é meu primeiro contato com `PHP`, é um bom começo ter essa experiência inicial.
 
-### Rodar o servidor PHP
+### Rodar o servidor PHP 🐘
 
 Para rodar o servidor `PHP` na máquina, utilizei a seguinte documentação: [Built-in web server](https://www.php.net/manual/en/features.commandline.webserver.php), onde acessamos a pasta na qual queremos rodar o servidor:
 
@@ -59,7 +59,7 @@ Após rodar o comando obtemos a resposta a seguir no terminal:
 
 Significa que o **servidor PHP** está funcionando corretamente. Assim, podemos acessar o endereço **http://localhost:8000/** e observar o funcionamento da API.
 
-### Integração da aplicação Full Stack com o Bitrix24
+### Integração da aplicação Full Stack com o Bitrix24 📲
 
 A integração foi a etapa mais desafiadora do projeto, pois a plataforma Bitrix24 e o PHP são ferramentas novas para mim. Pesquisei arduamente e encontrei a biblioteca [bitrix24-api-module](https://packagist.org/packages/oihso/php-bitrix24-api-module) porém não consegui instalar ela no projeto. Obtive o erro a seguir e não encontrei solução:
 

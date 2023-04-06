@@ -16,11 +16,38 @@ export default function CreateCompany() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        
+        const apiUrl = 'https://b24-56y3mh.bitrix24.com/rest/crm.company.add.json';
+        const { name, email, corporate_name } = inputs;
 
+        const requestBody = {
+            fields: {
+            TITLE: name,
+            //  PHONE: [{ VALUE: formData.phone }],
+            EMAIL: [{ VALUE: email }],
+            //  ADDRESS: formData.address,
+            INDUSTRY: corporate_name,
+            //  COMMENTS: formData.comments,
+            },
+            auth: 'l9gr6K6xPyoOxHvz7eJsoYWu45Oy4q8aum1ty2HcMsP9F92jc1',
+        };
+
+        axios.post(apiUrl, requestBody)
+        .then((response) => {
+            console.log('Empresa criada com sucesso:', response.data.result);
+            return response.data.result;
+        })
+        .catch((error) => {
+            console.error('Erro ao criar empresa:', error);
+            throw error;
+        });
+
+        /* 
+        //  Salvar Company criada no BD - CRUD React e PHP
         axios.post('http://localhost:8000/api/company/save', inputs).then(function(response){
             console.log(response.data);
             navigate('/');
-        });
+        }); */
     }
 
     return (

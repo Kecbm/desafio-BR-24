@@ -13,10 +13,29 @@ export default function EditCompany() {
     }, []);
 
     function getCompany() {
+        const apiUrl = `https://[seu_domaino].bitrix24.com/rest/crm.company.get.json`;
+
+        const requestBody = {
+          id: id,
+          auth: 'l9gr6K6xPyoOxHvz7eJsoYWu45Oy4q8aum1ty2HcMsP9F92jc1',
+        };
+      
+        axios.get(apiUrl, { params: requestBody })
+        .then((response) => {
+            console.log('Empresa recuperada com sucesso:', response.data.result);
+            return response.data.result;
+        })
+        .catch((error) => {
+            console.error('Erro ao recuperar empresa:', error);
+            throw error;
+        });
+
+        /* 
+        //  Ler uma Company no BD - CRUD React e PHP
         axios.get(`http://localhost:8000/api/company/${id}`).then(function(response) {
             console.log(response.data);
             setInputs(response.data);
-        });
+        }); */
     }
 
     const handleChange = (event) => {
@@ -29,10 +48,38 @@ export default function EditCompany() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        const apiUrl = `https://b24-56y3mh.bitrix24.com/rest/crm.company.update.json`;
+        const { name, email, corporate_name } = inputs;
+
+        const requestBody = {
+            id: id,
+            fields: {
+            TITLE: name,
+            //  PHONE: [{ VALUE: formData.phone }],
+            EMAIL: [{ VALUE: email }],
+            //  ADDRESS: formData.address,
+            INDUSTRY: corporate_name,
+            //  COMMENTS: formData.comments,
+            },
+            auth: 'l9gr6K6xPyoOxHvz7eJsoYWu45Oy4q8aum1ty2HcMsP9F92jc1',
+        };
+
+        axios.post(apiUrl, requestBody)
+        .then((response) => {
+            console.log('Empresa atualizada com sucesso:', response.data.result);
+            return response.data.result;
+        })
+        .catch((error) => {
+            console.error('Erro ao atualizar empresa:', error);
+            throw error;
+        });
+
+        /* 
+        //  Editar uma Company no BD - CRUD React e PHP
         axios.put(`http://localhost:8000/api/company/${id}/edit`, inputs).then(function(response){
             console.log(response.data);
             navigate('/');
-        });
+        }); */
     }
 
     return (

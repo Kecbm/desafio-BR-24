@@ -1,4 +1,8 @@
 <?php
+
+/* 
+OBS.: Comentando o código do CRUD em PHP para desenvolver a integração com o Bitrix24
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 header("Access-Control-Allow-Origin: *");
@@ -109,4 +113,4 @@ switch($method) {
 
         echo json_encode($response);
         break;
-}        
+}     */    

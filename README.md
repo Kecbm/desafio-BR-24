@@ -9,7 +9,10 @@ Um **CRUD** utilizando `Bitrix24`, `PHP` e `React`.
 Na aplicação desenvolvida é possível **criar, visualizar, editar e deletar** usuários. Todas as informações estão em um **banco de dados**, que foi desenvolvido e manipulado utilizando o **phpMyAdmin** e o **MySQL**.
 
 ### CRUD com React e PHP 🗂
-
+[02. Create company.webm](https://user-images.githubusercontent.com/67391952/230394032-fe27b7e9-0091-4203-8b4f-6724a11cb642.webm)
+[03. Read company.webm](https://user-images.githubusercontent.com/67391952/230394087-f9f3609d-2a8c-43b0-8e04-79fc3a9ec2dd.webm)
+[04. Update company.webm](https://user-images.githubusercontent.com/67391952/230394111-baa0eaa9-3445-48f9-9ce4-4c42d57c1c49.webm)
+[05. Delete company.webm](https://user-images.githubusercontent.com/67391952/230394147-1fa4ed7a-07c9-460b-95ee-c036d1892aba.webm)
 
 ## Tecnologias utilizadas 🛠
 

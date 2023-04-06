@@ -12,10 +12,10 @@ Na aplicação desenvolvida é possível **criar, visualizar, editar e deletar**
 
 Clique nos links a seguir para acessar os vídeos de cada operação do CRUD desenvolvido com **React** e **PHP**:
 
-[Create (criação) de uma nova empresa](https://user-images.githubusercontent.com/67391952/230394032-fe27b7e9-0091-4203-8b4f-6724a11cb642.webm) <br />
-[Read (leitura) da lista de empresas](https://user-images.githubusercontent.com/67391952/230394087-f9f3609d-2a8c-43b0-8e04-79fc3a9ec2dd.webm) <br />
-[Update (atualização) de uma empresa](https://user-images.githubusercontent.com/67391952/230394111-baa0eaa9-3445-48f9-9ce4-4c42d57c1c49.webm) <br />
-[Delete (exclusão) de uma empresa](https://user-images.githubusercontent.com/67391952/230394147-1fa4ed7a-07c9-460b-95ee-c036d1892aba.webm) <br />
+📝 [Create (criação) de uma nova empresa](https://user-images.githubusercontent.com/67391952/230394032-fe27b7e9-0091-4203-8b4f-6724a11cb642.webm) <br />
+📄 [Read (leitura) da lista de empresas](https://user-images.githubusercontent.com/67391952/230394087-f9f3609d-2a8c-43b0-8e04-79fc3a9ec2dd.webm) <br />
+🔄 [Update (atualização) de uma empresa](https://user-images.githubusercontent.com/67391952/230394111-baa0eaa9-3445-48f9-9ce4-4c42d57c1c49.webm) <br />
+❌ [Delete (exclusão) de uma empresa](https://user-images.githubusercontent.com/67391952/230394147-1fa4ed7a-07c9-460b-95ee-c036d1892aba.webm) <br />
 
 ## Tecnologias utilizadas 🛠
 

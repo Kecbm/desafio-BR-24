@@ -1,13 +1,13 @@
 <?php
 echo 'Hello, World in Bitrix24';
 
-/* //  OBS.: Comentando o código do CRUD em PHP para desenvolver a integração com o Bitrix24
-
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: *");
+
+/* //  OBS.: Comentando o código do CRUD em PHP para desenvolver a integração com o Bitrix24
 
 include 'DbConnect.php';
 $objDb = new DbConnect;

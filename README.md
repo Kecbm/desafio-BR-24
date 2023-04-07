@@ -68,3 +68,9 @@ A integração foi a etapa mais desafiadora do projeto, pois a plataforma Bitrix
 ```
 
 ![Erro na instalação da biblioteca](././src/docs/02.%20Biblioteca%20bitrix24-api-module.png)
+
+Após incluir as requisições para o Bitrix24 via formulário React, a aplicação apresentou os seguintes erros:
+
+![Erros React](././src//docs/03.%20Erros%20React.png)
+
+Tentei solucionar com adição de tag's no **index.php** porém não teve efeito corretivo. Outra possível solução era adicionar o endereço **http://localhost:3000** a lista de Origens Permitidas no aplicativo da Bitrix24. Porém não consegui realizar esse passo. 
